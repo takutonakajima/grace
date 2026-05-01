@@ -1,7 +1,20 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx create-next-app@latest *)"
+      "Bash(npx create-next-app@latest *)",
+      "Bash(npx shadcn@latest *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(node *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(curl -s http://localhost:3000/services -o /dev/null -w \"%{http_code}\")",
+      "Bash(curl -s http://localhost:3000/about -o /dev/null -w \" %{http_code}\")",
+      "Bash(curl -s http://localhost:3000/contact -o /dev/null -w \" %{http_code}\")",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh auth *)"
     ]
   }
 }
