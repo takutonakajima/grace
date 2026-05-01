@@ -43,7 +43,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-white font-light leading-[1.1] mb-6"
+          className="text-pink-300 font-light leading-[1.1] mb-6"
           style={{
             fontFamily: "var(--font-cormorant), serif",
             fontSize: "clamp(3.5rem, 8vw, 7rem)",
