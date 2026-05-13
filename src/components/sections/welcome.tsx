@@ -6,47 +6,51 @@ import Link from "next/link";
 
 export default function WelcomeSection() {
   return (
-    <section className="py-28 lg:py-36 bg-[#FAF8F5] overflow-hidden">
+    <section className="py-28 lg:py-40 bg-[#FAF7F2] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28 items-center">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
+            transition={{ duration: 1, ease: "easeOut" }}
             className="relative"
           >
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&q=85"
-                alt="Glow Life Aesthetics treatment"
+                src="https://images.unsplash.com/photo-1559734840-f9509ee5677f?q=100&w=1200"
+                alt="Grace Light Aesthetics treatment"
                 fill
-                className="object-cover"
+                quality={100}
+                className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
+              {/* Inner vignette */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C1C]/15 via-transparent to-transparent" />
             </div>
-            {/* Decorative accent */}
-            <div className="absolute -bottom-6 -right-6 w-48 h-48 border border-[#E8D5C4] -z-10" />
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#F0DDD5] -z-10" />
 
-            {/* Badge */}
+            {/* Decorative lines */}
+            <div className="absolute -bottom-8 -right-8 w-56 h-56 border border-[#C9A96E]/25 -z-10" />
+            <div className="absolute -top-8 -left-8 w-36 h-36 bg-[#EDDDCF]/50 -z-10" />
+
+            {/* Floating stat card */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.85, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute bottom-8 -right-4 lg:-right-12 bg-[#1E1A17] text-white p-6 shadow-xl"
+              transition={{ duration: 0.7, delay: 0.5 }}
+              className="absolute bottom-10 -right-6 lg:-right-14 bg-[#1C1C1C] text-white p-7 shadow-2xl"
             >
               <p
-                className="text-3xl font-light text-[#B8977E]"
+                className="text-4xl font-light text-[#C9A96E] leading-none"
                 style={{ fontFamily: "var(--font-cormorant), serif" }}
               >
                 500+
               </p>
               <p
-                className="text-xs tracking-[0.2em] uppercase text-[#8B7B71] mt-1 font-light"
-                style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                className="text-[10px] tracking-[0.25em] uppercase text-white/50 mt-2 font-light"
+                style={{ fontFamily: "var(--font-inter), sans-serif" }}
               >
                 Happy Clients
               </p>
@@ -58,53 +62,59 @@ export default function WelcomeSection() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
           >
-            <p
-              className="text-xs tracking-[0.4em] uppercase text-[#B8977E] mb-5 font-light"
-              style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
-            >
-              Welcome to Glow Life
-            </p>
-            <h2
-              className="font-light leading-[1.15] mb-8 text-[#1E1A17]"
-              style={{
-                fontFamily: "var(--font-cormorant), serif",
-                fontSize: "clamp(2.5rem, 4vw, 3.75rem)",
-              }}
-            >
-              Your Destination for{" "}
-              <em className="italic">Radiant</em> Results
-            </h2>
-            <div
-              className="space-y-5 text-[#8B7B71] leading-relaxed mb-10"
-              style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
-            >
-              <p>
-                At Glow Life Aesthetics & Wellness, we believe that true beauty is a harmony of confidence, care, and clinical expertise. Our boutique med spa was founded with one vision: to help every client feel like their most radiant self.
-              </p>
-              <p>
-                Every treatment is thoughtfully customized to your unique skin, body, and wellness goals. From your first consultation to your final follow-up, you&apos;ll experience the attentive, personalized care that sets us apart.
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-8 h-px bg-[#C9A96E]" />
+              <p
+                className="text-[10px] tracking-[0.45em] uppercase text-[#C9A96E] font-light"
+                style={{ fontFamily: "var(--font-inter), sans-serif" }}
+              >
+                Welcome to Grace Light
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-6 mb-10">
+            <h2
+              className="font-light leading-[1.12] mb-8 text-[#1C1C1C]"
+              style={{
+                fontFamily: "var(--font-cormorant), serif",
+                fontSize: "clamp(2.75rem, 4.5vw, 4rem)",
+              }}
+            >
+              Confidence That Feels{" "}
+              <em className="italic text-[#C9A96E]">Entirely Your Own</em>
+            </h2>
+
+            <div
+              className="space-y-5 text-[#7A6E65] leading-[1.85] mb-10 text-[15px]"
+              style={{ fontFamily: "var(--font-inter), sans-serif" }}
+            >
+              <p>
+                Located in Livonia, Grace Light Aesthetics & Wellness is a boutique med spa designed to feel calm, refined, and genuinely inviting from the moment you arrive.
+              </p>
+              <p>
+                We specialize in results-driven aesthetic treatments using advanced, medical-grade technology paired with specialized, all-natural products — carefully selected to support the healthiest skin and the most visible, lasting results.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-6 mb-12">
               {[
-                { value: "10+", label: "Years of Expertise" },
-                { value: "FDA", label: "Approved Treatments" },
+                { value: "21+", label: "Expert Services" },
+                { value: "FDA", label: "Cleared Technologies" },
                 { value: "500+", label: "Satisfied Clients" },
                 { value: "100%", label: "Personalized Plans" },
               ].map((stat) => (
-                <div key={stat.label} className="border-l-2 border-[#E8D5C4] pl-4">
+                <div key={stat.label} className="border-l border-[#C9A96E]/40 pl-5">
                   <p
-                    className="text-2xl font-light text-[#1E1A17] mb-0.5"
+                    className="text-3xl font-light text-[#1C1C1C] mb-1 leading-none"
                     style={{ fontFamily: "var(--font-cormorant), serif" }}
                   >
                     {stat.value}
                   </p>
                   <p
-                    className="text-xs tracking-[0.1em] text-[#8B7B71] uppercase font-light"
-                    style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                    className="text-[10px] tracking-[0.15em] text-[#7A6E65] uppercase font-light"
+                    style={{ fontFamily: "var(--font-inter), sans-serif" }}
                   >
                     {stat.label}
                   </p>
@@ -114,11 +124,11 @@ export default function WelcomeSection() {
 
             <Link
               href="/about"
-              className="inline-flex items-center gap-3 text-[#B8977E] text-xs tracking-[0.25em] uppercase font-light group"
-              style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+              className="inline-flex items-center gap-4 text-[#C9A96E] text-[10px] tracking-[0.3em] uppercase font-light group"
+              style={{ fontFamily: "var(--font-inter), sans-serif" }}
             >
               Our Story
-              <span className="w-8 h-px bg-[#B8977E] transition-all duration-300 group-hover:w-16" />
+              <span className="w-10 h-px bg-[#C9A96E] transition-all duration-500 group-hover:w-20" />
             </Link>
           </motion.div>
         </div>

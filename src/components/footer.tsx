@@ -1,42 +1,42 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const MANGOMINT_URL = "https://www.mangomint.com/";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1E1A17] text-[#FAF8F5]">
+    <footer className="bg-[#141414] text-[#FAF7F2]">
+      {/* Gold top accent */}
+      <div className="h-px bg-gradient-to-r from-transparent via-[#C9A96E]/40 to-transparent" />
+
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex flex-col leading-none mb-6">
-              <span
-                className="font-serif text-2xl font-light tracking-[0.15em] uppercase text-white"
-                style={{ fontFamily: "var(--font-cormorant), serif" }}
-              >
-                Glow Life
-              </span>
-              <span
-                className="text-[10px] tracking-[0.35em] uppercase font-light mt-1 text-[#B8977E]"
-                style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
-              >
-                Aesthetics & Wellness
-              </span>
+            <div className="mb-7">
+              <Image
+                src="/images/logo.jpg"
+                alt="Grace Light Aesthetics & Wellness"
+                width={148}
+                height={57}
+                quality={100}
+                className="object-contain rounded-sm opacity-90"
+              />
             </div>
             <p
-              className="text-[#8B7B71] text-sm leading-relaxed mb-6 max-w-xs"
-              style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+              className="text-white/35 text-[13px] leading-[1.85] mb-7 max-w-xs"
+              style={{ fontFamily: "var(--font-inter), sans-serif" }}
             >
-              Where science meets beauty. We provide premium aesthetic treatments tailored to reveal your most confident, radiant self.
+              A boutique med spa in Livonia, MI — results-driven aesthetic treatments, medical-grade technology, and personalized care in a calm, refined setting.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <a
                 href="#"
-                className="w-9 h-9 rounded-full border border-[#3D3530] flex items-center justify-center text-[#8B7B71] hover:border-[#B8977E] hover:text-[#B8977E] transition-all duration-300"
+                className="w-9 h-9 border border-white/10 flex items-center justify-center text-white/35 hover:border-[#C9A96E]/60 hover:text-[#C9A96E] transition-all duration-300"
                 aria-label="Instagram"
               >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                   <circle cx="12" cy="12" r="4"/>
                   <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"/>
@@ -44,10 +44,10 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="w-9 h-9 rounded-full border border-[#3D3530] flex items-center justify-center text-[#8B7B71] hover:border-[#B8977E] hover:text-[#B8977E] transition-all duration-300"
+                className="w-9 h-9 border border-white/10 flex items-center justify-center text-white/35 hover:border-[#C9A96E]/60 hover:text-[#C9A96E] transition-all duration-300"
                 aria-label="Facebook"
               >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                 </svg>
               </a>
@@ -57,15 +57,16 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4
-              className="text-xs tracking-[0.3em] uppercase text-[#B8977E] mb-6 font-normal"
-              style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+              className="text-[10px] tracking-[0.35em] uppercase text-[#C9A96E]/80 mb-7 font-normal"
+              style={{ fontFamily: "var(--font-inter), sans-serif" }}
             >
               Navigate
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               {[
                 { label: "Home", href: "/" },
                 { label: "Services", href: "/services" },
+                { label: "Pricing", href: "/pricing" },
                 { label: "About Us", href: "/about" },
                 { label: "Contact", href: "/contact" },
                 { label: "Book Appointment", href: MANGOMINT_URL },
@@ -73,8 +74,8 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#8B7B71] hover:text-[#E8D5C4] transition-colors duration-200"
-                    style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                    className="text-[13px] text-white/40 hover:text-[#C9A96E] transition-colors duration-200 font-light"
+                    style={{ fontFamily: "var(--font-inter), sans-serif" }}
                     {...(link.href.startsWith("http")
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
@@ -89,25 +90,25 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h4
-              className="text-xs tracking-[0.3em] uppercase text-[#B8977E] mb-6 font-normal"
-              style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+              className="text-[10px] tracking-[0.35em] uppercase text-[#C9A96E]/80 mb-7 font-normal"
+              style={{ fontFamily: "var(--font-inter), sans-serif" }}
             >
               Our Services
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               {[
-                "Laser Hair Removal",
-                "Body Contouring",
                 "RF Microneedling",
-                "Botox & Fillers",
-                "HydraFacial",
-                "IV Therapy",
+                "ClearLift & Dye-VL Laser",
+                "Neurotoxins & Fillers",
+                "Laser Hair Removal",
+                "Body Contouring & EMS",
+                "Vitamin Injections",
               ].map((service) => (
                 <li key={service}>
                   <Link
                     href="/services"
-                    className="text-sm text-[#8B7B71] hover:text-[#E8D5C4] transition-colors duration-200"
-                    style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                    className="text-[13px] text-white/40 hover:text-[#C9A96E] transition-colors duration-200 font-light"
+                    style={{ fontFamily: "var(--font-inter), sans-serif" }}
                   >
                     {service}
                   </Link>
@@ -119,50 +120,50 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4
-              className="text-xs tracking-[0.3em] uppercase text-[#B8977E] mb-6 font-normal"
-              style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+              className="text-[10px] tracking-[0.35em] uppercase text-[#C9A96E]/80 mb-7 font-normal"
+              style={{ fontFamily: "var(--font-inter), sans-serif" }}
             >
               Visit Us
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-5">
               <li>
                 <p
-                  className="text-xs tracking-[0.1em] uppercase text-[#8B7B71] mb-1"
-                  style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                  className="text-[10px] tracking-[0.15em] uppercase text-[#C9A96E]/50 mb-1.5"
+                  style={{ fontFamily: "var(--font-inter), sans-serif" }}
                 >
                   Address
                 </p>
                 <p
-                  className="text-sm text-[#C9B8AE] leading-relaxed"
-                  style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                  className="text-[13px] text-white/45 leading-relaxed font-light"
+                  style={{ fontFamily: "var(--font-inter), sans-serif" }}
                 >
-                  [Address Coming Soon]
+                  36103 Plymouth Road<br />Livonia, MI 48150
                 </p>
               </li>
               <li>
                 <p
-                  className="text-xs tracking-[0.1em] uppercase text-[#8B7B71] mb-1"
-                  style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                  className="text-[10px] tracking-[0.15em] uppercase text-[#C9A96E]/50 mb-1.5"
+                  style={{ fontFamily: "var(--font-inter), sans-serif" }}
                 >
                   Phone
                 </p>
                 <p
-                  className="text-sm text-[#C9B8AE]"
-                  style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                  className="text-[13px] text-white/45 font-light"
+                  style={{ fontFamily: "var(--font-inter), sans-serif" }}
                 >
-                  [Phone Coming Soon]
+                  Coming Soon
                 </p>
               </li>
               <li>
                 <p
-                  className="text-xs tracking-[0.1em] uppercase text-[#8B7B71] mb-1"
-                  style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                  className="text-[10px] tracking-[0.15em] uppercase text-[#C9A96E]/50 mb-1.5"
+                  style={{ fontFamily: "var(--font-inter), sans-serif" }}
                 >
                   Hours
                 </p>
                 <div
-                  className="text-sm text-[#C9B8AE] space-y-1"
-                  style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                  className="text-[13px] text-white/45 space-y-1 font-light"
+                  style={{ fontFamily: "var(--font-inter), sans-serif" }}
                 >
                   <p>Mon – Fri: 9am – 7pm</p>
                   <p>Saturday: 9am – 5pm</p>
@@ -175,21 +176,21 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-[#2E2925]">
+      <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p
-            className="text-xs text-[#5C504A] tracking-wide"
-            style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+            className="text-[11px] text-white/20 tracking-wide"
+            style={{ fontFamily: "var(--font-inter), sans-serif" }}
           >
-            © {new Date().getFullYear()} Glow Life Aesthetics & Wellness. All rights reserved.
+            © {new Date().getFullYear()} Grace Light Aesthetics & Wellness. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             {["Privacy Policy", "Terms of Service"].map((item) => (
               <Link
                 key={item}
                 href="#"
-                className="text-xs text-[#5C504A] hover:text-[#8B7B71] transition-colors duration-200 tracking-wide"
-                style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                className="text-[11px] text-white/20 hover:text-white/45 transition-colors duration-200 tracking-wide"
+                style={{ fontFamily: "var(--font-inter), sans-serif" }}
               >
                 {item}
               </Link>

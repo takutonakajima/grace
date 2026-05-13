@@ -8,52 +8,61 @@ const MANGOMINT_URL = "https://www.mangomint.com/";
 
 export default function CtaSection() {
   return (
-    <section className="relative py-28 lg:py-40 overflow-hidden">
+    <section className="relative py-32 lg:py-44 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1567721913486-6585f068b695?w=1920&q=85"
+          src="/images/woman-glowing-skin.jpg"
           alt="Book your appointment"
           fill
+          quality={100}
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[#1E1A17]/75" />
+        <div className="absolute inset-0 bg-[#1C1C1C]/78" />
+        {/* Subtle gold gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#C9A96E]/8 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-xs tracking-[0.45em] uppercase text-[#E8D5C4] mb-6 font-light"
-          style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+          transition={{ duration: 0.7 }}
+          className="flex items-center justify-center gap-4 mb-7"
         >
-          Begin Your Transformation
-        </motion.p>
+          <div className="w-10 h-px bg-[#C9A96E]/50" />
+          <p
+            className="text-[10px] tracking-[0.5em] uppercase text-[#C9A96E] font-light"
+            style={{ fontFamily: "var(--font-inter), sans-serif" }}
+          >
+            Begin Your Transformation
+          </p>
+          <div className="w-10 h-px bg-[#C9A96E]/50" />
+        </motion.div>
 
         <motion.h2
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-white font-light leading-[1.1] mb-8"
+          transition={{ duration: 1, delay: 0.1 }}
+          className="text-white font-light leading-[1.05] mb-8"
           style={{
             fontFamily: "var(--font-cormorant), serif",
-            fontSize: "clamp(2.75rem, 5vw, 4.5rem)",
+            fontSize: "clamp(3rem, 6vw, 5.5rem)",
           }}
         >
-          Ready to <em className="italic text-[#E8D5C4]">Glow?</em>
+          Ready to <em className="italic text-[#E8D9C3]">Begin?</em>
         </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-white/65 text-base leading-relaxed max-w-xl mx-auto mb-12"
-          style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+          transition={{ duration: 0.8, delay: 0.25 }}
+          className="text-white/55 leading-[1.85] max-w-lg mx-auto mb-12"
+          style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px" }}
         >
           Take the first step toward your most confident, radiant self. Book a complimentary consultation and let us craft your personalized wellness journey.
         </motion.p>
@@ -62,22 +71,22 @@ export default function CtaSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.38 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
             href={MANGOMINT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#B8977E] hover:bg-[#A0826A] text-white text-xs tracking-[0.3em] uppercase font-light px-12 py-4 transition-all duration-300 hover:shadow-lg hover:shadow-[#B8977E]/30"
-            style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+            className="inline-block bg-[#4ABFBF] hover:bg-[#3AAFAF] text-white text-[10px] tracking-[0.32em] uppercase font-light px-14 py-4 transition-all duration-300 hover:shadow-xl hover:shadow-[#4ABFBF]/25"
+            style={{ fontFamily: "var(--font-inter), sans-serif" }}
           >
             Book a Free Consultation
           </a>
           <Link
             href="/contact"
-            className="inline-block border border-white/50 hover:border-white text-white text-xs tracking-[0.3em] uppercase font-light px-12 py-4 transition-all duration-300 hover:bg-white/10"
-            style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+            className="inline-block border border-white/35 hover:border-[#C9A96E] text-white hover:text-[#C9A96E] text-[10px] tracking-[0.32em] uppercase font-light px-14 py-4 transition-all duration-300"
+            style={{ fontFamily: "var(--font-inter), sans-serif" }}
           >
             Contact Us
           </Link>

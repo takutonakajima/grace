@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -7,20 +7,22 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
+  display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Glow Life Aesthetics & Wellness | Premium Med Spa",
+  title: "Grace Light Aesthetics & Wellness | Med Spa in Livonia, MI",
   description:
-    "Glow Life Aesthetics & Wellness offers premium med spa treatments including laser hair removal, body contouring, RF microneedling, and more. Book your consultation today.",
+    "Grace Light Aesthetics & Wellness is a boutique med spa in Livonia, MI offering laser treatments, RF microneedling, neurotoxins, body contouring, and more. Book your consultation today.",
   keywords:
-    "med spa, laser hair removal, body contouring, RF microneedling, botox, aesthetics, wellness",
+    "med spa Livonia MI, laser hair removal, RF microneedling, neurotoxins, body contouring, ClearLift, Dye-VL, aesthetics, wellness, Grace Light",
 };
 
 export default function RootLayout({
@@ -31,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

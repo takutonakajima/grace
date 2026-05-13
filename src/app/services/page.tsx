@@ -24,44 +24,52 @@ export default function ServicesPage() {
       <Navigation />
 
       {/* Page Header */}
-      <section className="relative pt-40 pb-24 bg-[#1E1A17] overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <section className="relative pt-44 pb-28 bg-[#1C1C1C] overflow-hidden">
+        <div className="absolute inset-0 opacity-25">
           <Image
-            src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=1920&q=80"
-            alt="Services"
+            src="/images/laser-facial.jpg"
+            alt="Grace Light Services"
             fill
+            quality={100}
             className="object-cover"
             sizes="100vw"
           />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1C1C1C]/60 to-[#1C1C1C]/80" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-xs tracking-[0.4em] uppercase text-[#B8977E] mb-4 font-light"
-            style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+            transition={{ duration: 0.7 }}
+            className="flex items-center justify-center gap-4 mb-6"
           >
-            What We Offer
-          </motion.p>
+            <div className="w-10 h-px bg-[#C9A96E]/50" />
+            <p
+              className="text-[10px] tracking-[0.5em] uppercase text-[#C9A96E] font-light"
+              style={{ fontFamily: "var(--font-inter), sans-serif" }}
+            >
+              What We Offer
+            </p>
+            <div className="w-10 h-px bg-[#C9A96E]/50" />
+          </motion.div>
           <motion.h1
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-white font-light leading-[1.1]"
+            transition={{ duration: 1, delay: 0.1 }}
+            className="text-white font-light leading-[1.05]"
             style={{
               fontFamily: "var(--font-cormorant), serif",
-              fontSize: "clamp(3rem, 6vw, 5rem)",
+              fontSize: "clamp(3.5rem, 7vw, 5.5rem)",
             }}
           >
-            Our <em className="italic">Treatments</em>
+            Our <em className="italic text-[#E8D9C3]">Treatments</em>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-white/60 mt-6 max-w-xl mx-auto text-base leading-relaxed"
-            style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+            transition={{ duration: 0.8, delay: 0.25 }}
+            className="text-white/50 mt-6 max-w-xl mx-auto leading-[1.85]"
+            style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px" }}
           >
             From advanced skin rejuvenation to transformative body treatments, our full menu of services is designed to help you look and feel your best.
           </motion.p>
@@ -69,20 +77,20 @@ export default function ServicesPage() {
       </section>
 
       {/* Filter + Grid */}
-      <section className="py-24 bg-[#FAF8F5]">
+      <section className="py-24 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Category Filter */}
-          <div className="flex items-center justify-center flex-wrap gap-3 mb-16">
+          <div className="flex items-center justify-center flex-wrap gap-2.5 mb-16">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`text-xs tracking-[0.25em] uppercase font-light px-6 py-2.5 border transition-all duration-300 ${
+                className={`text-[10px] tracking-[0.28em] uppercase font-light px-7 py-2.5 border transition-all duration-300 ${
                   activeCategory === cat
-                    ? "bg-[#1E1A17] text-white border-[#1E1A17]"
-                    : "bg-transparent text-[#8B7B71] border-[#E5D8CF] hover:border-[#B8977E] hover:text-[#B8977E]"
+                    ? "bg-[#1C1C1C] text-white border-[#1C1C1C]"
+                    : "bg-transparent text-[#7A6E65] border-[#E8D9C3] hover:border-[#C9A96E] hover:text-[#C9A96E]"
                 }`}
-                style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                style={{ fontFamily: "var(--font-inter), sans-serif" }}
               >
                 {cat}
               </button>
@@ -97,29 +105,30 @@ export default function ServicesPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 gap-6"
             >
               {filtered.map((service, i) => (
                 <motion.div
                   key={service.id}
                   initial={{ opacity: 0, y: 25 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: i * 0.08 }}
-                  className="group bg-white overflow-hidden flex flex-col md:flex-row hover:shadow-xl transition-shadow duration-500"
+                  transition={{ duration: 0.6, delay: i * 0.07 }}
+                  className="group bg-white overflow-hidden flex flex-col md:flex-row hover:shadow-[0_8px_40px_rgba(0,0,0,0.07)] transition-shadow duration-500 border border-[#E8D9C3]/40"
                 >
                   {/* Image */}
-                  <div className="relative w-full md:w-56 aspect-[3/2] md:aspect-auto flex-shrink-0 overflow-hidden">
+                  <div className="relative w-full md:w-52 aspect-[3/2] md:aspect-auto flex-shrink-0 overflow-hidden">
                     <Image
                       src={service.image}
                       alt={service.name}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 224px"
+                      quality={100}
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.07]"
+                      sizes="(max-width: 768px) 100vw, 400px"
                     />
                     <div className="absolute top-3 left-3">
                       <span
-                        className="text-[9px] tracking-[0.3em] uppercase text-white bg-[#B8977E]/90 px-2.5 py-1 font-light"
-                        style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                        className="text-[8px] tracking-[0.3em] uppercase text-white bg-[#C9A96E]/85 px-2.5 py-1 font-light backdrop-blur-sm"
+                        style={{ fontFamily: "var(--font-inter), sans-serif" }}
                       >
                         {service.category}
                       </span>
@@ -130,29 +139,29 @@ export default function ServicesPage() {
                   <div className="flex-1 p-7 lg:p-8">
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <h3
-                        className="text-[#1E1A17] font-light text-2xl leading-snug"
-                        style={{ fontFamily: "var(--font-cormorant), serif" }}
+                        className="text-[#1C1C1C] font-light leading-tight"
+                        style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "1.5rem" }}
                       >
                         {service.name}
                       </h3>
                       {service.duration && (
                         <span
-                          className="text-[10px] tracking-[0.15em] uppercase text-[#B8977E] whitespace-nowrap font-light mt-1"
-                          style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                          className="text-[9px] tracking-[0.15em] uppercase text-[#C9A96E] whitespace-nowrap font-light mt-1"
+                          style={{ fontFamily: "var(--font-inter), sans-serif" }}
                         >
                           {service.duration}
                         </span>
                       )}
                     </div>
                     <p
-                      className="text-sm text-[#8B7B71] leading-relaxed mb-5 italic"
-                      style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "1rem" }}
+                      className="text-[#7A6E65] leading-relaxed mb-4 italic"
+                      style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "1.05rem" }}
                     >
                       {service.tagline}
                     </p>
                     <p
-                      className="text-sm text-[#8B7B71] leading-relaxed mb-6 line-clamp-2"
-                      style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                      className="text-[13px] text-[#7A6E65] leading-[1.8] mb-5 line-clamp-2"
+                      style={{ fontFamily: "var(--font-inter), sans-serif" }}
                     >
                       {service.description}
                     </p>
@@ -162,10 +171,10 @@ export default function ServicesPage() {
                       {service.benefits.slice(0, 3).map((b) => (
                         <li
                           key={b}
-                          className="flex items-start gap-2 text-xs text-[#8B7B71]"
-                          style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                          className="flex items-start gap-2 text-[12px] text-[#7A6E65]"
+                          style={{ fontFamily: "var(--font-inter), sans-serif" }}
                         >
-                          <Check size={12} className="text-[#B8977E] mt-0.5 flex-shrink-0" />
+                          <Check size={11} className="text-[#C9A96E] mt-0.5 flex-shrink-0" />
                           {b}
                         </li>
                       ))}
@@ -175,8 +184,8 @@ export default function ServicesPage() {
                       href={MANGOMINT_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block text-[10px] tracking-[0.3em] uppercase font-light text-[#B8977E] border-b border-[#B8977E] pb-0.5 hover:text-[#1E1A17] hover:border-[#1E1A17] transition-colors duration-300"
-                      style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+                      className="inline-flex items-center gap-2 text-[9px] tracking-[0.3em] uppercase font-light text-[#4ABFBF] border-b border-[#4ABFBF]/40 pb-0.5 hover:text-[#1C1C1C] hover:border-[#1C1C1C] transition-colors duration-300"
+                      style={{ fontFamily: "var(--font-inter), sans-serif" }}
                     >
                       Book This Treatment
                     </a>
@@ -189,20 +198,21 @@ export default function ServicesPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 bg-[#F0DDD5]/40 text-center">
+      <section className="py-24 bg-[#1C1C1C] text-center">
         <div className="max-w-2xl mx-auto px-6">
+          <div className="h-px bg-gradient-to-r from-transparent via-[#C9A96E]/30 to-transparent mb-16" />
           <h2
-            className="font-light text-[#1E1A17] mb-4"
+            className="font-light text-white mb-5"
             style={{
               fontFamily: "var(--font-cormorant), serif",
-              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontSize: "clamp(2.25rem, 4.5vw, 3.25rem)",
             }}
           >
-            Not Sure Where to Start?
+            Not Sure Where to <em className="italic text-[#C9A96E]">Start?</em>
           </h2>
           <p
-            className="text-[#8B7B71] text-sm leading-relaxed mb-8"
-            style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+            className="text-white/40 text-[14px] leading-[1.85] mb-10"
+            style={{ fontFamily: "var(--font-inter), sans-serif" }}
           >
             Book a complimentary consultation and our experts will guide you toward the perfect treatment plan for your goals.
           </p>
@@ -210,11 +220,12 @@ export default function ServicesPage() {
             href={MANGOMINT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#B8977E] hover:bg-[#A0826A] text-white text-xs tracking-[0.3em] uppercase font-light px-10 py-4 transition-all duration-300"
-            style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}
+            className="inline-block bg-[#4ABFBF] hover:bg-[#3AAFAF] text-white text-[10px] tracking-[0.32em] uppercase font-light px-12 py-4 transition-all duration-300 hover:shadow-lg hover:shadow-[#4ABFBF]/20"
+            style={{ fontFamily: "var(--font-inter), sans-serif" }}
           >
             Book a Free Consultation
           </a>
+          <div className="h-px bg-gradient-to-r from-transparent via-[#C9A96E]/30 to-transparent mt-16" />
         </div>
       </section>
 
