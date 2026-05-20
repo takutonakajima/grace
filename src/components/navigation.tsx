@@ -8,15 +8,20 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-const navLinks = [
+const navLinksLeft = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Membership Program", href: "/membership" },
+  { label: "Membership", href: "/membership" },
   { label: "Services", href: "/services" },
+];
+
+const navLinksRight = [
   { label: "Pricing", href: "/pricing" },
   { label: "Payment Options", href: "/payment-options" },
   { label: "Contact", href: "/contact" },
 ];
+
+const allNavLinks = [...navLinksLeft, ...navLinksRight];
 
 const MANGOMINT_URL = "https://www.mangomint.com/";
 
@@ -40,6 +45,13 @@ export default function Navigation() {
   const textColor =
     isHome && !scrolled ? "text-white" : "text-[#1C1C1C]";
 
+  const linkClass = (href: string) =>
+    `text-[10px] tracking-[0.14em] uppercase font-light transition-colors duration-200 relative group whitespace-nowrap ${
+      pathname === href
+        ? "text-[#C9A96E]"
+        : `${textColor} hover:text-[#C9A96E]`
+    }`;
+
   return (
     <motion.header
       initial={{ y: -20, opacity: 0 }}
@@ -48,58 +60,74 @@ export default function Navigation() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBg}`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[72px]">
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-5 flex-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-[10px] tracking-[0.14em] uppercase font-light transition-colors duration-200 relative group whitespace-nowrap ${
-                  pathname === link.href
-                    ? "text-[#C9A96E]"
-                    : `${textColor} hover:text-[#C9A96E]`
-                }`}
-                style={{ fontFamily: "var(--font-inter), sans-serif" }}
-              >
+
+        {/* ── Desktop: 3-column centered-logo layout ── */}
+        <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center h-[76px]">
+
+          {/* Left links */}
+          <nav className="flex items-center gap-6">
+            {navLinksLeft.map((link) => (
+              <Link key={link.href} href={link.href} className={linkClass(link.href)}
+                style={{ fontFamily: "var(--font-inter), sans-serif" }}>
                 {link.label}
-                <span
-                  className={`absolute -bottom-1 left-0 h-px bg-[#C9A96E] transition-all duration-300 ${
-                    pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
-                />
+                <span className={`absolute -bottom-1 left-0 h-px bg-[#C9A96E] transition-all duration-300 ${pathname === link.href ? "w-full" : "w-0 group-hover:w-full"}`} />
               </Link>
             ))}
           </nav>
-          <a
-            href={MANGOMINT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden lg:inline-block ml-4 bg-[#4ABFBF] hover:bg-[#3AAFAF] text-white px-5 py-2.5 text-[9.5px] tracking-[0.22em] uppercase font-light transition-all duration-300 hover:shadow-md hover:shadow-[#4ABFBF]/20 whitespace-nowrap flex-shrink-0"
-            style={{ fontFamily: "var(--font-inter), sans-serif" }}
-          >
-            Book Now
-          </a>
 
-          {/* Mobile: Logo + Menu */}
-          <Link href="/" className="lg:hidden transition-opacity duration-300 hover:opacity-85 flex-shrink-0">
+          {/* Center logo */}
+          <Link href="/" className="flex justify-center px-8 transition-opacity hover:opacity-80">
             <Image
               src="/images/logo.jpg"
               alt="Grace Light Aesthetics & Wellness"
-              width={130}
-              height={50}
+              width={110}
+              height={42}
               quality={100}
               className="object-contain rounded-sm"
               priority
             />
           </Link>
 
-          {/* Mobile Menu */}
+          {/* Right links + Book Now */}
+          <nav className="flex items-center justify-end gap-6">
+            {navLinksRight.map((link) => (
+              <Link key={link.href} href={link.href} className={linkClass(link.href)}
+                style={{ fontFamily: "var(--font-inter), sans-serif" }}>
+                {link.label}
+                <span className={`absolute -bottom-1 left-0 h-px bg-[#C9A96E] transition-all duration-300 ${pathname === link.href ? "w-full" : "w-0 group-hover:w-full"}`} />
+              </Link>
+            ))}
+            <a
+              href={MANGOMINT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-1 bg-[#4ABFBF] hover:bg-[#3AAFAF] text-white px-5 py-2.5 text-[9.5px] tracking-[0.22em] uppercase font-light transition-all duration-300 hover:shadow-md hover:shadow-[#4ABFBF]/20 whitespace-nowrap"
+              style={{ fontFamily: "var(--font-inter), sans-serif" }}
+            >
+              Book Now
+            </a>
+          </nav>
+        </div>
+
+        {/* ── Mobile: logo left + hamburger right ── */}
+        <div className="flex lg:hidden items-center justify-between h-[72px]">
+          <Link href="/" className="transition-opacity hover:opacity-85 flex-shrink-0">
+            <Image
+              src="/images/logo.jpg"
+              alt="Grace Light Aesthetics & Wellness"
+              width={120}
+              height={46}
+              quality={100}
+              className="object-contain rounded-sm"
+              priority
+            />
+          </Link>
+
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger
               render={
                 <button
-                  className={`lg:hidden p-2 transition-colors ${textColor}`}
+                  className={`p-2 transition-colors ${textColor}`}
                   aria-label="Open menu"
                 />
               }
@@ -130,7 +158,7 @@ export default function Navigation() {
                 </div>
 
                 <nav className="flex flex-col px-8 py-10 gap-7 flex-1">
-                  {navLinks.map((link, i) => (
+                  {allNavLinks.map((link, i) => (
                     <motion.div
                       key={link.href}
                       initial={{ opacity: 0, x: 20 }}
@@ -168,6 +196,7 @@ export default function Navigation() {
             </SheetContent>
           </Sheet>
         </div>
+
       </div>
     </motion.header>
   );

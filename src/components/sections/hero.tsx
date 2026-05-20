@@ -55,25 +55,6 @@ export default function HeroSection() {
           <div className="w-10 h-px bg-[#C9A96E]/60" />
         </motion.div>
 
-        {/* GL Logo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="mb-8"
-        >
-          <Image
-            src="/images/logo.jpg"
-            alt="Grace Light"
-            width={180}
-            height={70}
-            quality={100}
-            className="object-contain"
-            style={{ mixBlendMode: "multiply" }}
-            priority
-          />
-        </motion.div>
-
         {/* Grace Light heading */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
