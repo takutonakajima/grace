@@ -56,13 +56,13 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1 }}
-            className="text-white font-light leading-[1.05]"
+            className="text-white font-normal leading-[1.05]"
             style={{
               fontFamily: "var(--font-cormorant), serif",
-              fontSize: "clamp(3.5rem, 7vw, 5.5rem)",
+              fontSize: "clamp(4.5rem, 9vw, 7.5rem)",
             }}
           >
-            Our <em className="italic text-[#E8D9C3]">Treatments</em>
+            Our <em className="heading-highlight">Treatments</em>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -154,13 +154,13 @@ export default function ServicesPage() {
                       )}
                     </div>
                     <p
-                      className="text-[#7A6E65] leading-relaxed mb-4 italic"
+                      className="text-[#1C1C1C] leading-relaxed mb-4 italic"
                       style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "1.05rem" }}
                     >
                       {service.tagline}
                     </p>
                     <p
-                      className="text-[13px] text-[#7A6E65] leading-[1.8] mb-5 line-clamp-2"
+                      className="text-[13px] text-[#1C1C1C] leading-[1.8] mb-5 line-clamp-2"
                       style={{ fontFamily: "var(--font-inter), sans-serif" }}
                     >
                       {service.description}
@@ -171,7 +171,7 @@ export default function ServicesPage() {
                       {service.benefits.slice(0, 3).map((b) => (
                         <li
                           key={b}
-                          className="flex items-start gap-2 text-[12px] text-[#7A6E65]"
+                          className="flex items-start gap-2 text-[12px] text-[#1C1C1C]"
                           style={{ fontFamily: "var(--font-inter), sans-serif" }}
                         >
                           <Check size={11} className="text-[#C9A96E] mt-0.5 flex-shrink-0" />

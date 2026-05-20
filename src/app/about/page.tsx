@@ -100,17 +100,17 @@ export default function AboutPage() {
                 </p>
               </div>
               <h2
-                className="font-light leading-[1.12] text-[#1C1C1C] mb-9"
+                className="font-normal leading-[1.12] text-[#1C1C1C] mb-9"
                 style={{
                   fontFamily: "var(--font-cormorant), serif",
-                  fontSize: "clamp(2.5rem, 4.5vw, 3.75rem)",
+                  fontSize: "clamp(2.75rem, 4.5vw, 4.25rem)",
                 }}
               >
                 Confidence That Feels{" "}
-                <em className="italic text-[#C9A96E]">Natural, Attainable,<br />and Entirely Your Own</em>
+                <em className="heading-highlight">Natural, Attainable,<br />and Entirely Your Own</em>
               </h2>
               <div
-                className="space-y-5 text-[#7A6E65] leading-[1.85] text-[15px]"
+                className="space-y-5 text-[#1C1C1C] leading-[1.85] text-[15px]"
                 style={{ fontFamily: "var(--font-inter), sans-serif" }}
               >
                 <p>
@@ -137,8 +137,8 @@ export default function AboutPage() {
             >
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=100&w=1200"
-                  alt="Grace Light team"
+                  src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=100&w=1200"
+                  alt="Grace Light luxury spa experience"
                   fill
                   quality={100}
                   className="object-cover object-top"
@@ -176,13 +176,13 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-light text-[#1C1C1C] leading-[1.12]"
+              className="font-normal text-[#1C1C1C] leading-[1.12]"
               style={{
                 fontFamily: "var(--font-cormorant), serif",
-                fontSize: "clamp(2.75rem, 4.5vw, 3.75rem)",
+                fontSize: "clamp(3.25rem, 5.5vw, 4.75rem)",
               }}
             >
-              Our Core <em className="italic text-[#C9A96E]">Values</em>
+              Our Core <em className="heading-highlight">Values</em>
             </motion.h2>
           </div>
 
@@ -204,7 +204,7 @@ export default function AboutPage() {
                   {value.title}
                 </h3>
                 <p
-                  className="text-[#7A6E65] text-[13px] leading-[1.85]"
+                  className="text-[#1C1C1C] text-[13px] leading-[1.85]"
                   style={{ fontFamily: "var(--font-inter), sans-serif" }}
                 >
                   {value.description}
@@ -260,17 +260,17 @@ export default function AboutPage() {
       <section className="py-28 bg-[#FAF7F2] text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2
-            className="font-light text-[#1C1C1C] mb-6"
+            className="font-normal text-[#1C1C1C] mb-6"
             style={{
               fontFamily: "var(--font-cormorant), serif",
-              fontSize: "clamp(2.25rem, 4.5vw, 3.25rem)",
+              fontSize: "clamp(3rem, 5vw, 4.5rem)",
             }}
           >
             Experience the{" "}
-            <em className="italic text-[#C9A96E]">Grace Light</em> Difference
+            <em className="heading-highlight">Grace Light</em> Difference
           </h2>
           <p
-            className="text-[#7A6E65] text-[14px] leading-[1.85] mb-10"
+            className="text-[#1C1C1C] text-[14px] leading-[1.85] mb-10"
             style={{ fontFamily: "var(--font-inter), sans-serif" }}
           >
             Book your appointment today and take the first step toward results you can see and confidence you can feel.

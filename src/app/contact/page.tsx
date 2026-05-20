@@ -64,13 +64,13 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1 }}
-            className="text-white font-light leading-[1.05]"
+            className="text-white font-normal leading-[1.05]"
             style={{
               fontFamily: "var(--font-cormorant), serif",
-              fontSize: "clamp(3.5rem, 7vw, 5.5rem)",
+              fontSize: "clamp(4.5rem, 9vw, 7rem)",
             }}
           >
-            We&apos;d Love to <em className="italic text-[#E8D9C3]">Meet You</em>
+            We&apos;d Love to <em className="heading-highlight">Meet You</em>
           </motion.h1>
         </div>
       </section>
@@ -96,17 +96,17 @@ export default function ContactPage() {
                 </p>
               </div>
               <h2
-                className="font-light leading-[1.12] text-[#1C1C1C] mb-8"
+                className="font-normal leading-[1.12] text-[#1C1C1C] mb-8"
                 style={{
                   fontFamily: "var(--font-cormorant), serif",
-                  fontSize: "clamp(2.25rem, 3.5vw, 3.25rem)",
+                  fontSize: "clamp(2.75rem, 4vw, 4rem)",
                 }}
               >
                 Start Your{" "}
-                <em className="italic text-[#C9A96E]">Grace Light Experience</em>
+                <em className="heading-highlight">Grace Light Experience</em>
               </h2>
               <p
-                className="text-[#7A6E65] leading-[1.85] mb-12 text-[15px]"
+                className="text-[#1C1C1C] leading-[1.85] mb-12 text-[15px]"
                 style={{ fontFamily: "var(--font-inter), sans-serif" }}
               >
                 Whether you&apos;re ready to book or just have questions, our team is here to help. Reach out and we&apos;ll get back to you promptly.
@@ -214,7 +214,7 @@ export default function ContactPage() {
                       Message Received
                     </h4>
                     <p
-                      className="text-[#7A6E65] text-[13px]"
+                      className="text-[#1C1C1C] text-[13px]"
                       style={{ fontFamily: "var(--font-inter), sans-serif" }}
                     >
                       Thank you for reaching out. We&apos;ll be in touch shortly.

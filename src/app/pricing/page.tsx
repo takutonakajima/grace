@@ -82,7 +82,7 @@ const pricingSections: PricingSection[] = [
     ],
   },
   {
-    title: "RF Microneedling",
+    title: "Microneedling",
     subtitle: "1 treatment / 3-treatment package",
     rows: [
       { service: "Face or Scalp", standard: "$400 / $1,020", member: "$360 / $918" },
@@ -221,13 +221,13 @@ export default function PricingPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1 }}
-            className="text-white font-light leading-[1.05] mb-6"
+            className="text-white font-normal leading-[1.05] mb-6"
             style={{
               fontFamily: "var(--font-cormorant), serif",
-              fontSize: "clamp(3.5rem, 7vw, 5.5rem)",
+              fontSize: "clamp(4.5rem, 9vw, 7.5rem)",
             }}
           >
-            Our <em className="italic text-[#E8D9C3]">Pricing</em>
+            Our <em className="heading-highlight">Pricing</em>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -242,144 +242,180 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Membership Section — dark luxury card */}
-      <section className="py-28 bg-[#FAF7F2]">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-14">
+      {/* Membership Section — bold hero card */}
+      <section className="py-0 bg-[#1C1C1C] relative overflow-hidden">
+        {/* Subtle gold texture overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#C9A96E]/8 via-transparent to-[#C9A96E]/5 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A96E]/60 to-transparent" />
+
+        <div className="relative max-w-6xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+          {/* Header */}
+          <div className="text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="flex items-center justify-center gap-4 mb-5"
+              className="flex items-center justify-center gap-4 mb-6"
             >
-              <div className="w-10 h-px bg-[#C9A96E]/50" />
+              <div className="w-14 h-px bg-[#C9A96E]/60" />
               <p
-                className="text-[10px] tracking-[0.5em] uppercase text-[#C9A96E] font-light"
+                className="text-[10px] tracking-[0.6em] uppercase text-[#C9A96E] font-light"
                 style={{ fontFamily: "var(--font-inter), sans-serif" }}
               >
-                Membership
+                Exclusive Membership
               </p>
-              <div className="w-10 h-px bg-[#C9A96E]/50" />
+              <div className="w-14 h-px bg-[#C9A96E]/60" />
             </motion.div>
+
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-light text-[#1C1C1C] leading-[1.12] mb-6"
+              transition={{ duration: 0.9, delay: 0.1 }}
+              className="font-normal text-white leading-[1.05] mb-6"
               style={{
                 fontFamily: "var(--font-cormorant), serif",
-                fontSize: "clamp(2.75rem, 4.5vw, 3.75rem)",
+                fontSize: "clamp(3.5rem, 7vw, 6.5rem)",
               }}
             >
               The Grace Light{" "}
-              <em className="italic text-[#C9A96E]">Membership</em>
+              <em className="heading-highlight">Membership</em>
             </motion.h2>
-            <motion.div
+
+            <motion.p
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-baseline gap-2"
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-white/55 max-w-2xl mx-auto leading-[1.85] mb-10"
+              style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "15px" }}
+            >
+              The smartest way to invest in your beauty and wellness. For just $99/month, unlock exclusive pricing, monthly credits, and premium perks — every single month.
+            </motion.p>
+
+            {/* Price badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.25 }}
+              className="inline-flex items-center gap-3 border border-[#C9A96E]/40 bg-[#C9A96E]/10 px-8 py-4 mb-4"
             >
               <span
-                className="font-light text-[#1C1C1C]"
+                className="font-light text-[#C9A96E]"
                 style={{
                   fontFamily: "var(--font-cormorant), serif",
-                  fontSize: "clamp(3.5rem, 6vw, 5.5rem)",
+                  fontSize: "clamp(3rem, 6vw, 5rem)",
                 }}
               >
                 $99
               </span>
-              <span
-                className="text-[#7A6E65] text-base font-light"
-                style={{ fontFamily: "var(--font-inter), sans-serif" }}
-              >
-                / month
-              </span>
+              <div className="flex flex-col text-left">
+                <span
+                  className="text-white/70 text-[11px] tracking-[0.2em] uppercase font-light"
+                  style={{ fontFamily: "var(--font-inter), sans-serif" }}
+                >
+                  per month
+                </span>
+                <span
+                  className="text-[#C9A96E]/70 text-[10px] tracking-[0.15em] uppercase font-light"
+                  style={{ fontFamily: "var(--font-inter), sans-serif" }}
+                >
+                  3-month minimum
+                </span>
+              </div>
             </motion.div>
           </div>
 
+          {/* Perks grid */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="bg-[#1C1C1C] p-10 lg:p-14 mb-8 border border-[#C9A96E]/10"
+            transition={{ duration: 0.9, delay: 0.3 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10"
           >
-            {/* Gold top accent */}
-            <div className="h-px bg-gradient-to-r from-transparent via-[#C9A96E]/50 to-transparent mb-10" />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {membershipPerks.map((perk) => (
-                <div key={perk.label} className="flex items-start gap-4">
+            {membershipPerks.map((perk, i) => (
+              <motion.div
+                key={perk.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 + i * 0.08 }}
+                className="border border-[#C9A96E]/20 bg-white/[0.04] hover:bg-white/[0.07] hover:border-[#C9A96E]/50 p-7 transition-all duration-400 group"
+              >
+                <div className="flex items-start gap-4">
                   <div
-                    className="w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5"
+                    className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300"
                     style={{ backgroundColor: TEAL }}
                   >
-                    <Check size={10} className="text-white" strokeWidth={2.5} />
+                    <Check size={12} className="text-white" strokeWidth={2.5} />
                   </div>
                   <div>
                     <p
-                      className="text-white font-light leading-snug mb-1.5"
-                      style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "1.1rem" }}
+                      className="text-white font-normal leading-snug mb-2"
+                      style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "1.25rem" }}
                     >
                       {perk.label}
                     </p>
                     <p
-                      className="text-white/35 text-[12px] leading-[1.7] font-light"
+                      className="text-white/50 text-[12px] leading-[1.7] font-light"
                       style={{ fontFamily: "var(--font-inter), sans-serif" }}
                     >
                       {perk.detail}
                     </p>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            <div className="border-t border-white/8 pt-9">
-              <p
-                className="text-[10px] tracking-[0.2em] uppercase text-[#C9A96E]/60 mb-5 font-light"
-                style={{ fontFamily: "var(--font-inter), sans-serif" }}
-              >
-                Membership Details
-              </p>
-              <ul
-                className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-[13px] text-white/35 font-light"
-                style={{ fontFamily: "var(--font-inter), sans-serif" }}
-              >
-                <li>• 3-month minimum commitment</li>
-                <li>• Monthly treatment credits roll over up to 60 days</li>
-                <li>• Bonus credits expire monthly</li>
-                <li>• Perks are exclusive to active members</li>
-              </ul>
-            </div>
-
-            <div className="h-px bg-gradient-to-r from-transparent via-[#C9A96E]/50 to-transparent mt-10" />
+              </motion.div>
+            ))}
           </motion.div>
 
+          {/* Fine print + CTA */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.35 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
             className="text-center"
           >
+            <div className="mb-8 text-center">
+              <ul
+                className="inline-flex flex-wrap justify-center gap-x-8 gap-y-2 text-[11px] text-white/30 font-light"
+                style={{ fontFamily: "var(--font-inter), sans-serif" }}
+              >
+                <li>3-month minimum commitment</li>
+                <li>·</li>
+                <li>Treatment credits roll over up to 60 days</li>
+                <li>·</li>
+                <li>Bonus credits expire monthly</li>
+                <li>·</li>
+                <li>Perks are exclusive to active members</li>
+              </ul>
+            </div>
+
             <a
               href={MANGOMINT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-white text-[10px] tracking-[0.32em] uppercase font-light px-14 py-4 transition-all duration-300 hover:shadow-lg hover:shadow-[#4ABFBF]/20 hover:opacity-90"
+              className="inline-block text-white text-[11px] tracking-[0.35em] uppercase font-light px-16 py-5 transition-all duration-300 hover:shadow-2xl hover:shadow-[#4ABFBF]/30 hover:scale-[1.02]"
               style={{
                 fontFamily: "var(--font-inter), sans-serif",
                 backgroundColor: TEAL,
               }}
             >
-              Become a Member
+              Become a Member Today
             </a>
+            <p
+              className="text-white/25 text-[11px] mt-4 font-light"
+              style={{ fontFamily: "var(--font-inter), sans-serif" }}
+            >
+              Questions? <Link href="/contact" className="text-[#C9A96E]/60 hover:text-[#C9A96E] transition-colors">Contact us</Link> — we&apos;d love to help.
+            </p>
           </motion.div>
         </div>
+
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A96E]/30 to-transparent" />
       </section>
 
       {/* Pricing Tables */}
@@ -399,13 +435,13 @@ export default function PricingPage() {
               <div className="w-10 h-px bg-[#C9A96E]/50" />
             </div>
             <h2
-              className="font-light text-[#1C1C1C] leading-[1.12] mb-9"
+              className="font-normal text-[#1C1C1C] leading-[1.12] mb-9"
               style={{
                 fontFamily: "var(--font-cormorant), serif",
-                fontSize: "clamp(2.25rem, 4vw, 3.25rem)",
+                fontSize: "clamp(3rem, 5vw, 4.25rem)",
               }}
             >
-              Full <em className="italic text-[#C9A96E]">Menu</em>
+              Full <em className="heading-highlight">Menu</em>
             </h2>
             <div className="inline-flex items-center gap-8 border border-[#E8D9C3] px-8 py-3.5 bg-white">
               <div className="flex items-center gap-2">
@@ -444,8 +480,8 @@ export default function PricingPage() {
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-7 py-5 border-b border-[#F3EBE2] bg-[#FAF7F2]">
                   <div>
                     <h3
-                      className="font-light text-[#1C1C1C] leading-tight"
-                      style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "1.35rem" }}
+                      className="font-normal text-[#1C1C1C] leading-tight"
+                      style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "1.65rem" }}
                     >
                       {section.title}
                     </h3>
@@ -567,13 +603,13 @@ export default function PricingPage() {
         <div className="max-w-2xl mx-auto px-6">
           <div className="h-px bg-gradient-to-r from-transparent via-[#C9A96E]/30 to-transparent mb-16" />
           <h2
-            className="font-light text-white mb-6 leading-[1.1]"
+            className="font-normal text-white mb-6 leading-[1.1]"
             style={{
               fontFamily: "var(--font-cormorant), serif",
-              fontSize: "clamp(2.25rem, 4.5vw, 3.25rem)",
+              fontSize: "clamp(3rem, 5vw, 4.5rem)",
             }}
           >
-            Unlock <em className="italic text-[#C9A96E]">Member Pricing</em> on Every Treatment
+            Unlock <em className="heading-highlight">Member Pricing</em> on Every Treatment
           </h2>
           <p
             className="text-white/40 text-[14px] leading-[1.85] mb-10"

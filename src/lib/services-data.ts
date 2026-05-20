@@ -62,14 +62,14 @@ export const services: Service[] = [
   },
   {
     id: "rf-microneedling",
-    name: "RF Microneedling",
+    name: "Microneedling",
     category: "Face",
-    tagline: "Resurface, tighten, and rejuvenate at a cellular level.",
+    tagline: "Resurface and rejuvenate with precision-guided collagen induction.",
     description:
-      "Combining radiofrequency energy with precise microneedling, this advanced treatment stimulates deep collagen production to reduce fine lines, tighten skin, and minimize pores. Enhance results with optional PRP, PRF, or Exosome add-ons.",
+      "Microneedling uses ultra-fine needles to create controlled micro-channels in the skin, triggering natural collagen and elastin production. This proven treatment reduces fine lines, minimizes pores, and improves skin texture — with optional PRP, PRF, or Exosome add-ons for enhanced results.",
     benefits: [
       "Reduces fine lines, wrinkles & acne scars",
-      "Tightens and lifts sagging skin",
+      "Improves skin texture and minimizes pores",
       "Optional PRP, PRF, or Exosome enhancement",
       "Treats face, neck, and scalp",
     ],
@@ -260,7 +260,7 @@ export const services: Service[] = [
   {
     id: "pelvic-floor",
     name: "Pelvic Floor Treatment",
-    category: "Body",
+    category: "Wellness",
     tagline: "Strengthen and restore pelvic floor function non-invasively.",
     description:
       "Our non-invasive pelvic floor treatment uses EMS technology to stimulate deep pelvic floor muscles — helping restore strength, control, and confidence. An effective option for postpartum recovery and pelvic floor rehabilitation.",

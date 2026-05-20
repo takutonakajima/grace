@@ -65,9 +65,11 @@ export default function Footer() {
             <ul className="space-y-3.5">
               {[
                 { label: "Home", href: "/" },
+                { label: "About", href: "/about" },
+                { label: "Membership Program", href: "/membership" },
                 { label: "Services", href: "/services" },
                 { label: "Pricing", href: "/pricing" },
-                { label: "About Us", href: "/about" },
+                { label: "Payment Options", href: "/payment-options" },
                 { label: "Contact", href: "/contact" },
                 { label: "Book Appointment", href: MANGOMINT_URL },
               ].map((link) => (
@@ -97,7 +99,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3.5">
               {[
-                "RF Microneedling",
+                "Microneedling",
                 "ClearLift & Dye-VL Laser",
                 "Neurotoxins & Fillers",
                 "Laser Hair Removal",

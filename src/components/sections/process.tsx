@@ -50,13 +50,13 @@ export default function ProcessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-light text-[#1C1C1C] leading-[1.12]"
+            className="font-normal text-[#1C1C1C] leading-[1.12]"
             style={{
               fontFamily: "var(--font-cormorant), serif",
-              fontSize: "clamp(2.75rem, 4.5vw, 3.75rem)",
+              fontSize: "clamp(3.25rem, 5.5vw, 4.75rem)",
             }}
           >
-            Your Journey to <em className="italic text-[#C9A96E]">Confidence</em>
+            Your Journey to <em className="heading-highlight">Confidence</em>
           </motion.h2>
         </div>
 
@@ -102,7 +102,7 @@ export default function ProcessSection() {
               <div className="w-8 h-px bg-[#C9A96E]/50 mx-auto mb-5" />
 
               <p
-                className="text-[#7A6E65] text-[13px] leading-[1.85] max-w-xs mx-auto"
+                className="text-[#1C1C1C] text-[13px] leading-[1.85] max-w-xs mx-auto"
                 style={{ fontFamily: "var(--font-inter), sans-serif" }}
                 dangerouslySetInnerHTML={{ __html: step.description }}
               />

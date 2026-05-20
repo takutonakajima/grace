@@ -19,42 +19,19 @@ export default function WelcomeSection() {
           >
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1559734840-f9509ee5677f?q=100&w=1200"
-                alt="Grace Light Aesthetics treatment"
+                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=100&w=1200"
+                alt="Grace Light Aesthetics — luxury spa experience"
                 fill
                 quality={100}
-                className="object-cover object-top"
+                className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              {/* Inner vignette */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C1C]/15 via-transparent to-transparent" />
             </div>
 
             {/* Decorative lines */}
             <div className="absolute -bottom-8 -right-8 w-56 h-56 border border-[#C9A96E]/25 -z-10" />
             <div className="absolute -top-8 -left-8 w-36 h-36 bg-[#EDDDCF]/50 -z-10" />
-
-            {/* Floating stat card */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              className="absolute bottom-10 -right-6 lg:-right-14 bg-[#1C1C1C] text-white p-7 shadow-2xl"
-            >
-              <p
-                className="text-4xl font-light text-[#C9A96E] leading-none"
-                style={{ fontFamily: "var(--font-cormorant), serif" }}
-              >
-                500+
-              </p>
-              <p
-                className="text-[10px] tracking-[0.25em] uppercase text-white/50 mt-2 font-light"
-                style={{ fontFamily: "var(--font-inter), sans-serif" }}
-              >
-                Happy Clients
-              </p>
-            </motion.div>
           </motion.div>
 
           {/* Text */}
@@ -75,18 +52,18 @@ export default function WelcomeSection() {
             </div>
 
             <h2
-              className="font-light leading-[1.12] mb-8 text-[#1C1C1C]"
+              className="font-normal leading-[1.12] mb-8 text-[#1C1C1C]"
               style={{
                 fontFamily: "var(--font-cormorant), serif",
-                fontSize: "clamp(2.75rem, 4.5vw, 4rem)",
+                fontSize: "clamp(2.75rem, 4.5vw, 4.25rem)",
               }}
             >
               Confidence That Feels{" "}
-              <em className="italic text-[#C9A96E]">Entirely Your Own</em>
+              <em className="heading-highlight">Entirely Your Own</em>
             </h2>
 
             <div
-              className="space-y-5 text-[#7A6E65] leading-[1.85] mb-10 text-[15px]"
+              className="space-y-5 text-[#1C1C1C] leading-[1.85] mb-10 text-[15px]"
               style={{ fontFamily: "var(--font-inter), sans-serif" }}
             >
               <p>
@@ -97,12 +74,11 @@ export default function WelcomeSection() {
               </p>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-6 mb-12">
+            {/* Stats — 3 items */}
+            <div className="grid grid-cols-3 gap-6 mb-12">
               {[
                 { value: "21+", label: "Expert Services" },
                 { value: "FDA", label: "Cleared Technologies" },
-                { value: "500+", label: "Satisfied Clients" },
                 { value: "100%", label: "Personalized Plans" },
               ].map((stat) => (
                 <div key={stat.label} className="border-l border-[#C9A96E]/40 pl-5">

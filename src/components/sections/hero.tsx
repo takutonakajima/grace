@@ -1,117 +1,116 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 
 const MANGOMINT_URL = "https://www.mangomint.com/";
 
-const slides = [
-  {
-    src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=100&w=1920",
-    alt: "Grace Light Aesthetics & Wellness — Livonia, MI",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=100&w=1920",
-    alt: "Grace Light Aesthetics & Wellness — Results-Driven Care",
-  },
-];
-
 export default function HeroSection() {
-  const [current, setCurrent] = useState(0);
   const ref = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 600], [0, 120]);
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
 
-  useEffect(() => {
-    const timer = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 6500);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Slideshow backgrounds with parallax */}
+      {/* Background image with parallax */}
       <motion.div className="absolute inset-0" style={{ y }}>
-        <AnimatePresence mode="sync">
-          <motion.div
-            key={current}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.8, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={slides[current].src}
-              alt={slides[current].alt}
-              fill
-              priority
-              quality={100}
-              className="object-cover object-center scale-105"
-              sizes="100vw"
-            />
-          </motion.div>
-        </AnimatePresence>
+        <Image
+          src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=100&w=1920"
+          alt="Grace Light Aesthetics & Wellness — Diverse Beauty"
+          fill
+          priority
+          quality={100}
+          className="object-cover object-center scale-105"
+          sizes="100vw"
+        />
       </motion.div>
 
-      {/* Layered overlays for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/70 z-[1]" />
+      {/* Layered overlays */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/65 z-[1]" />
       <div className="absolute inset-0 bg-[#1C1C1C]/10 z-[1]" />
 
-      {/* Content */}
+      {/* Hero content */}
       <motion.div
-        className="relative z-10 text-center px-6 max-w-5xl mx-auto"
+        className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center"
         style={{ opacity }}
       >
+        {/* Location pill */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="flex items-center justify-center gap-4 mb-8"
+          transition={{ duration: 1, delay: 0.2 }}
+          className="flex items-center gap-4 mb-10"
         >
-          <div className="w-12 h-px bg-[#C9A96E]/60" />
+          <div className="w-10 h-px bg-[#C9A96E]/60" />
           <p
             className="text-[#C9A96E] text-[10px] tracking-[0.55em] uppercase font-light"
             style={{ fontFamily: "var(--font-inter), sans-serif" }}
           >
             Boutique Med Spa · Livonia, MI
           </p>
-          <div className="w-12 h-px bg-[#C9A96E]/60" />
+          <div className="w-10 h-px bg-[#C9A96E]/60" />
         </motion.div>
 
+        {/* GL Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="mb-8"
+        >
+          <div className="bg-white/90 backdrop-blur-sm px-8 py-4 inline-block shadow-lg">
+            <Image
+              src="/images/logo.jpg"
+              alt="Grace Light"
+              width={150}
+              height={58}
+              quality={100}
+              className="object-contain"
+              priority
+            />
+          </div>
+        </motion.div>
+
+        {/* Grace Light heading */}
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.1, delay: 0.5 }}
-          className="text-white font-light leading-[1.02] mb-7"
+          transition={{ duration: 1.1, delay: 0.6 }}
+          className="text-white leading-[1.0] mb-4"
           style={{
             fontFamily: "var(--font-cormorant), serif",
-            fontSize: "clamp(4rem, 10vw, 9rem)",
+            fontSize: "clamp(4rem, 10vw, 8.5rem)",
+            fontWeight: 300,
             letterSpacing: "-0.01em",
           }}
         >
-          Where Beauty
-          <br />
-          <em className="italic font-light" style={{ color: "#E8D9C3" }}>Meets Science</em>
+          Grace Light
         </motion.h1>
 
+        {/* Aesthetics and Wellness */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.85 }}
-          className="text-white/65 text-base md:text-[17px] font-light leading-relaxed max-w-lg mx-auto mb-12 tracking-wide"
-          style={{ fontFamily: "var(--font-inter), sans-serif" }}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="text-[#E8D9C3]/90 tracking-[0.4em] uppercase mb-12"
+          style={{
+            fontFamily: "var(--font-inter), sans-serif",
+            fontSize: "clamp(0.7rem, 2vw, 1rem)",
+            fontWeight: 300,
+          }}
         >
-          Results-driven aesthetic treatments using advanced, medical-grade technology — paired with genuine, personalized care.
+          Aesthetics and Wellness
         </motion.p>
 
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 1.1 }}
+          transition={{ duration: 0.9, delay: 1.05 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
@@ -132,24 +131,6 @@ export default function HeroSection() {
           </Link>
         </motion.div>
       </motion.div>
-
-      {/* Slide indicators */}
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex items-center gap-3 z-20">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            aria-label={`Slide ${i + 1}`}
-            className="transition-all duration-500 py-2"
-          >
-            <div
-              className={`h-px transition-all duration-500 ${
-                i === current ? "w-10 bg-[#C9A96E]" : "w-5 bg-white/30"
-              }`}
-            />
-          </button>
-        ))}
-      </div>
 
       {/* Scroll indicator */}
       <motion.div

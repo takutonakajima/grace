@@ -53,15 +53,15 @@ export default function WhyUsSection() {
               </p>
             </div>
             <h2
-              className="font-light leading-[1.12] text-white mb-8"
+              className="font-normal leading-[1.12] text-white mb-8"
               style={{
                 fontFamily: "var(--font-cormorant), serif",
-                fontSize: "clamp(2.75rem, 4.5vw, 4rem)",
+                fontSize: "clamp(3.25rem, 5.5vw, 4.75rem)",
               }}
             >
               A Standard of
               <br />
-              <em className="italic text-[#C9A96E]">Excellence</em>
+              <em className="heading-highlight">Excellence</em>
             </h2>
             <p
               className="text-white/45 leading-[1.85] mb-10 text-[15px] max-w-sm"

@@ -36,13 +36,13 @@ export default function FeaturedServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-light text-[#1C1C1C] leading-[1.12]"
+            className="font-normal text-[#1C1C1C] leading-[1.12]"
             style={{
               fontFamily: "var(--font-cormorant), serif",
-              fontSize: "clamp(2.75rem, 4.5vw, 3.75rem)",
+              fontSize: "clamp(3.25rem, 5.5vw, 4.75rem)",
             }}
           >
-            Treatments That <em className="italic text-[#C9A96E]">Transform</em>
+            Treatments That <em className="heading-highlight">Transform</em>
           </motion.h2>
         </div>
 

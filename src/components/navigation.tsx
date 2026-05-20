@@ -5,14 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Membership Program", href: "/membership" },
   { label: "Services", href: "/services" },
   { label: "Pricing", href: "/pricing" },
-  { label: "About", href: "/about" },
+  { label: "Payment Options", href: "/payment-options" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -46,27 +48,14 @@ export default function Navigation() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBg}`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[76px]">
-          {/* Logo */}
-          <Link href="/" className="transition-opacity duration-300 hover:opacity-85 flex-shrink-0">
-            <Image
-              src="/images/logo.jpg"
-              alt="Grace Light Aesthetics & Wellness"
-              width={148}
-              height={57}
-              quality={100}
-              className="object-contain rounded-sm"
-              priority
-            />
-          </Link>
-
+        <div className="flex items-center justify-between h-[72px]">
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-9">
+          <nav className="hidden lg:flex items-center gap-5 flex-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[11px] tracking-[0.18em] uppercase font-light transition-colors duration-200 relative group ${
+                className={`text-[10px] tracking-[0.14em] uppercase font-light transition-colors duration-200 relative group whitespace-nowrap ${
                   pathname === link.href
                     ? "text-[#C9A96E]"
                     : `${textColor} hover:text-[#C9A96E]`
@@ -81,23 +70,36 @@ export default function Navigation() {
                 />
               </Link>
             ))}
-            <a
-              href={MANGOMINT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-2 inline-block bg-[#4ABFBF] hover:bg-[#3AAFAF] text-white px-6 py-2.5 text-[10px] tracking-[0.22em] uppercase font-light transition-all duration-300 hover:shadow-md hover:shadow-[#4ABFBF]/20"
-              style={{ fontFamily: "var(--font-inter), sans-serif" }}
-            >
-              Book Now
-            </a>
           </nav>
+          <a
+            href={MANGOMINT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:inline-block ml-4 bg-[#4ABFBF] hover:bg-[#3AAFAF] text-white px-5 py-2.5 text-[9.5px] tracking-[0.22em] uppercase font-light transition-all duration-300 hover:shadow-md hover:shadow-[#4ABFBF]/20 whitespace-nowrap flex-shrink-0"
+            style={{ fontFamily: "var(--font-inter), sans-serif" }}
+          >
+            Book Now
+          </a>
+
+          {/* Mobile: Logo + Menu */}
+          <Link href="/" className="lg:hidden transition-opacity duration-300 hover:opacity-85 flex-shrink-0">
+            <Image
+              src="/images/logo.jpg"
+              alt="Grace Light Aesthetics & Wellness"
+              width={130}
+              height={50}
+              quality={100}
+              className="object-contain rounded-sm"
+              priority
+            />
+          </Link>
 
           {/* Mobile Menu */}
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger
               render={
                 <button
-                  className={`md:hidden p-2 transition-colors ${textColor}`}
+                  className={`lg:hidden p-2 transition-colors ${textColor}`}
                   aria-label="Open menu"
                 />
               }
