@@ -19,8 +19,8 @@ export default function WelcomeSection() {
           >
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=100&w=1200"
-                alt="Grace Light Aesthetics — luxury spa experience"
+                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=100&w=1200"
+                alt="Grace Light Aesthetics — clinical med spa facial treatment"
                 fill
                 quality={100}
                 className="object-cover object-center"

@@ -62,17 +62,16 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.4 }}
           className="mb-8"
         >
-          <div className="bg-white/90 backdrop-blur-sm px-8 py-4 inline-block shadow-lg">
-            <Image
-              src="/images/logo.jpg"
-              alt="Grace Light"
-              width={150}
-              height={58}
-              quality={100}
-              className="object-contain"
-              priority
-            />
-          </div>
+          <Image
+            src="/images/logo.jpg"
+            alt="Grace Light"
+            width={180}
+            height={70}
+            quality={100}
+            className="object-contain"
+            style={{ mixBlendMode: "multiply" }}
+            priority
+          />
         </motion.div>
 
         {/* Grace Light heading */}
