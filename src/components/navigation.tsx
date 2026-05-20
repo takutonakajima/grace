@@ -75,8 +75,13 @@ export default function Navigation() {
             ))}
           </nav>
 
-          {/* Center logo */}
-          <Link href="/" className="flex justify-center px-8 transition-opacity hover:opacity-80">
+          {/* Center logo — hidden when transparent (home hero) so white JPG bg doesn't show */}
+          <Link
+            href="/"
+            className={`flex justify-center px-8 transition-all duration-500 hover:opacity-80 ${
+              isHome && !scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
+          >
             <Image
               src="/images/logo.jpg"
               alt="Grace Light Aesthetics & Wellness"

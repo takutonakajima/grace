@@ -89,7 +89,7 @@ export default function WelcomeSection() {
                     {stat.value}
                   </p>
                   <p
-                    className="text-[10px] tracking-[0.15em] text-[#7A6E65] uppercase font-light"
+                    className="text-[10px] tracking-[0.15em] text-[#1C1C1C]/60 uppercase font-light"
                     style={{ fontFamily: "var(--font-inter), sans-serif" }}
                   >
                     {stat.label}

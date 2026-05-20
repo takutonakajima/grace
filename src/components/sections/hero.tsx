@@ -60,10 +60,10 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.6 }}
-          className="text-white leading-[1.0] mb-4"
+          className="text-white leading-[1.0] mb-4 px-4"
           style={{
             fontFamily: "var(--font-cormorant), serif",
-            fontSize: "clamp(4rem, 10vw, 8.5rem)",
+            fontSize: "clamp(2.8rem, 10vw, 8.5rem)",
             fontWeight: 300,
             letterSpacing: "-0.01em",
           }}

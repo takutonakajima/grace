@@ -88,7 +88,7 @@ export default function ServicesPage() {
                 className={`text-[10px] tracking-[0.28em] uppercase font-light px-7 py-2.5 border transition-all duration-300 ${
                   activeCategory === cat
                     ? "bg-[#1C1C1C] text-white border-[#1C1C1C]"
-                    : "bg-transparent text-[#7A6E65] border-[#E8D9C3] hover:border-[#C9A96E] hover:text-[#C9A96E]"
+                    : "bg-transparent text-[#1C1C1C] border-[#E8D9C3] hover:border-[#C9A96E] hover:text-[#C9A96E]"
                 }`}
                 style={{ fontFamily: "var(--font-inter), sans-serif" }}
               >

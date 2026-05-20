@@ -447,7 +447,7 @@ export default function PricingPage() {
               <div className="flex items-center gap-2">
                 <div className="w-2.5 h-2.5 bg-[#1C1C1C]" />
                 <span
-                  className="text-[10px] tracking-[0.15em] uppercase font-light text-[#7A6E65]"
+                  className="text-[10px] tracking-[0.15em] uppercase font-light text-[#1C1C1C]/60"
                   style={{ fontFamily: "var(--font-inter), sans-serif" }}
                 >
                   Standard Rate
@@ -481,13 +481,13 @@ export default function PricingPage() {
                   <div>
                     <h3
                       className="font-normal text-[#1C1C1C] leading-tight"
-                      style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "1.65rem" }}
+                      style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "2.1rem" }}
                     >
                       {section.title}
                     </h3>
                     {section.subtitle && (
                       <p
-                        className="text-[10px] tracking-[0.15em] uppercase text-[#7A6E65] font-light mt-1"
+                        className="text-[10px] tracking-[0.15em] uppercase text-[#1C1C1C]/50 font-light mt-1"
                         style={{ fontFamily: "var(--font-inter), sans-serif" }}
                       >
                         {section.subtitle}
@@ -564,7 +564,7 @@ export default function PricingPage() {
                     </div>
                     <div className="flex sm:block items-center gap-2">
                       <span
-                        className="sm:hidden text-[10px] tracking-[0.15em] uppercase text-[#7A6E65] font-light w-20"
+                        className="sm:hidden text-[10px] tracking-[0.15em] uppercase text-[#1C1C1C]/60 font-light w-20"
                         style={{ fontFamily: "var(--font-inter), sans-serif" }}
                       >
                         Standard:

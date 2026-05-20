@@ -127,6 +127,22 @@ export const services: Service[] = [
     duration: "45–60 min",
   },
   {
+    id: "non-ablative-resurfacing",
+    name: "Non-Ablative Skin Resurfacing",
+    category: "Face",
+    tagline: "Advanced laser resurfacing for transformative skin renewal.",
+    description:
+      "Our Lavandula non-ablative resurfacing treatments use 1927nm Thulium and 1550nm Erbium Glass wavelengths to target texture, tone, and pigmentation at deeper skin layers — delivering significant visible renewal with minimal downtime compared to ablative alternatives.",
+    benefits: [
+      "Lavandula 1927nm Thulium for pigmentation & tone",
+      "Lavandula 1550nm Erbium Glass for texture & resurfacing",
+      "Significant results with minimal downtime",
+      "Safe for multiple skin tones",
+    ],
+    image: "/images/skin-resurfacing-laser.jpg",
+    duration: "30–60 min",
+  },
+  {
     id: "aqua-facial",
     name: "Aqua Facial",
     category: "Face",
