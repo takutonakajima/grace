@@ -19,8 +19,8 @@ export default function HeroSection() {
       {/* Background image with parallax */}
       <motion.div className="absolute inset-0" style={{ y }}>
         <Image
-          src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=100&w=1920"
-          alt="Grace Light Aesthetics & Wellness — Diverse Beauty"
+          src="/images/hero-1.jpg"
+          alt="Grace Light Aesthetics & Wellness"
           fill
           priority
           quality={100}
