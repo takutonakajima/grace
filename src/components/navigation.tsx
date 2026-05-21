@@ -75,7 +75,7 @@ export default function Navigation() {
             ))}
           </nav>
 
-          {/* Center logo — hidden when transparent (home hero) so white JPG bg doesn't show */}
+          {/* Center logo — mix-blend-mode multiply makes white JPG bg transparent */}
           <Link
             href="/"
             className={`flex justify-center px-8 transition-all duration-500 hover:opacity-80 ${
@@ -89,6 +89,7 @@ export default function Navigation() {
               height={42}
               quality={100}
               className="object-contain rounded-sm"
+              style={{ mixBlendMode: "multiply" }}
               priority
             />
           </Link>
@@ -124,6 +125,7 @@ export default function Navigation() {
               height={46}
               quality={100}
               className="object-contain rounded-sm"
+              style={{ mixBlendMode: "multiply" }}
               priority
             />
           </Link>
@@ -153,6 +155,7 @@ export default function Navigation() {
                     height={48}
                     quality={100}
                     className="object-contain rounded-sm"
+                    style={{ mixBlendMode: "multiply" }}
                   />
                   <button
                     onClick={() => setMobileOpen(false)}

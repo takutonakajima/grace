@@ -53,7 +53,7 @@ export default function CtaSection() {
             fontSize: "clamp(3rem, 6vw, 5.5rem)",
           }}
         >
-          Ready to <em className="italic text-[#E8D9C3]">Begin?</em>
+          Ready to <em className="heading-highlight">Begin?</em>
         </motion.h2>
 
         <motion.p

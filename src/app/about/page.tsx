@@ -69,13 +69,13 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1 }}
-            className="text-white font-light leading-[1.05]"
+            className="text-white font-normal leading-[1.05]"
             style={{
               fontFamily: "var(--font-cormorant), serif",
-              fontSize: "clamp(3.5rem, 7vw, 5.5rem)",
+              fontSize: "clamp(4.5rem, 9vw, 7.5rem)",
             }}
           >
-            About <em className="italic text-[#E8D9C3]">Grace Light</em>
+            About <em className="heading-highlight">Grace Light</em>
           </motion.h1>
         </div>
       </section>

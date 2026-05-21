@@ -59,7 +59,7 @@ export default function ServicesPage() {
             className="text-white font-normal leading-[1.05]"
             style={{
               fontFamily: "var(--font-cormorant), serif",
-              fontSize: "clamp(4.5rem, 9vw, 7.5rem)",
+              fontSize: "clamp(5rem, 9vw, 8.5rem)",
             }}
           >
             Our <em className="heading-highlight">Treatments</em>
@@ -208,7 +208,7 @@ export default function ServicesPage() {
               fontSize: "clamp(2.25rem, 4.5vw, 3.25rem)",
             }}
           >
-            Not Sure Where to <em className="italic text-[#C9A96E]">Start?</em>
+            Not Sure Where to <em className="heading-highlight">Start?</em>
           </h2>
           <p
             className="text-white/40 text-[14px] leading-[1.85] mb-10"

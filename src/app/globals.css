@@ -111,13 +111,14 @@
     @apply border-border outline-ring/50;
   }
   html {
-    font-size: 107%;
+    font-size: 112.5%;
   }
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-inter), sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.8;
   }
   h1,
   h2,
@@ -131,9 +132,9 @@
 /* Sitewide highlighted heading style — terracotta/blush marker behind italic words */
 .heading-highlight {
   font-style: italic;
-  background: rgba(210, 130, 95, 0.38);
-  border-radius: 4px;
-  padding: 2px 10px 6px;
+  background: rgba(210, 120, 80, 0.42);
+  border-radius: 3px;
+  padding: 2px 12px 7px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }

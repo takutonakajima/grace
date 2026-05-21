@@ -105,11 +105,28 @@ export default function MembershipPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white/60 max-w-2xl mx-auto leading-[1.85] mb-12"
+            className="text-white/60 max-w-2xl mx-auto leading-[1.85] mb-8"
             style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "16px" }}
           >
             The smartest way to invest in your beauty and wellness. For one flat monthly fee, unlock exclusive savings, credits, and premium perks — every single month, without fail.
           </motion.p>
+
+          {/* Urgency pill */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.28 }}
+            className="inline-flex items-center gap-2 mb-10 px-5 py-2 border"
+            style={{ borderColor: `${TEAL}50` }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: TEAL }} />
+            <span
+              className="text-[10px] tracking-[0.3em] uppercase font-light"
+              style={{ fontFamily: "var(--font-inter), sans-serif", color: TEAL }}
+            >
+              Join today and start saving immediately
+            </span>
+          </motion.div>
 
           {/* Giant price */}
           <motion.div
@@ -229,7 +246,8 @@ export default function MembershipPage() {
               className="font-normal text-[#1C1C1C] leading-[1.1]"
               style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "clamp(3rem, 5.5vw, 5rem)" }}
             >
-              Five Perks. <em className="heading-highlight">Every Month.</em>
+              Every Month,{" "}
+              <em className="heading-highlight">Without Exception.</em>
             </motion.h2>
           </div>
 

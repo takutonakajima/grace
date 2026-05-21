@@ -478,10 +478,12 @@ export default function PricingPage() {
               >
                 {/* Section Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-7 py-5 border-b border-[#F3EBE2] bg-[#FAF7F2]">
-                  <div>
+                  <div className="flex items-start gap-5">
+                    <div className="w-0.5 self-stretch flex-shrink-0" style={{ backgroundColor: "#C9A96E" }} />
+                    <div>
                     <h3
                       className="font-normal text-[#1C1C1C] leading-tight"
-                      style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "2.1rem" }}
+                      style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "2.25rem" }}
                     >
                       {section.title}
                     </h3>
@@ -493,6 +495,7 @@ export default function PricingPage() {
                         {section.subtitle}
                       </p>
                     )}
+                    </div>
                   </div>
                   <a
                     href={MANGOMINT_URL}
