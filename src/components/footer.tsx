@@ -22,6 +22,7 @@ export default function Footer() {
                 height={57}
                 quality={100}
                 className="object-contain rounded-sm opacity-90"
+                style={{ mixBlendMode: "multiply" }}
               />
             </div>
             <p

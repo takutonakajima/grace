@@ -129,12 +129,12 @@
   }
 }
 
-/* Sitewide highlighted heading style — terracotta/blush marker behind italic words */
+/* Sitewide highlighted heading style — blush marker behind italic words */
 .heading-highlight {
   font-style: italic;
-  background: rgba(210, 120, 80, 0.42);
+  background-color: rgba(196, 154, 130, 0.3);
   border-radius: 3px;
-  padding: 2px 12px 7px;
+  padding: 2px 8px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }

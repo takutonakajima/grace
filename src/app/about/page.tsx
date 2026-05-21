@@ -266,8 +266,8 @@ export default function AboutPage() {
               fontSize: "clamp(3rem, 5vw, 4.5rem)",
             }}
           >
-            Experience the{" "}
-            <em className="heading-highlight">Grace Light</em> Difference
+            Experience the Grace Light{" "}
+            <em className="heading-highlight">Difference</em>
           </h2>
           <p
             className="text-[#1C1C1C] text-[14px] leading-[1.85] mb-10"

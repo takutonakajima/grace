@@ -130,17 +130,17 @@ export const services: Service[] = [
     id: "non-ablative-resurfacing",
     name: "Non-Ablative Skin Resurfacing",
     category: "Face",
-    tagline: "Advanced laser resurfacing for transformative skin renewal.",
+    tagline: "Deep skin remodeling with zero surface damage.",
     description:
-      "Our Lavandula non-ablative resurfacing treatments use 1927nm Thulium and 1550nm Erbium Glass wavelengths to target texture, tone, and pigmentation at deeper skin layers — delivering significant visible renewal with minimal downtime compared to ablative alternatives.",
+      "Our Lavandula dual-wavelength platform combines 1927nm Thulium for surface brightening with 1550nm Erbium Glass for deep repair — treating sun damage, melasma, fine lines, and acne scars with incredible precision and minimal downtime.",
     benefits: [
-      "Lavandula 1927nm Thulium for pigmentation & tone",
-      "Lavandula 1550nm Erbium Glass for texture & resurfacing",
-      "Significant results with minimal downtime",
-      "Safe for multiple skin tones",
+      "Treats melasma, sun damage & acne scars",
+      "Dual wavelength for surface + deep correction",
+      "Dramatically smoother texture and tone",
+      "Minimal downtime compared to ablative options",
     ],
     image: "/images/skin-resurfacing-laser.jpg",
-    duration: "30–60 min",
+    duration: "45–90 min",
   },
   {
     id: "aqua-facial",
@@ -292,7 +292,7 @@ export const services: Service[] = [
   {
     id: "tattoo-removal",
     name: "Tattoo Removal",
-    category: "Body",
+    category: "Face",
     tagline: "Safely fade and remove unwanted tattoos.",
     description:
       "Our laser tattoo removal progressively fades and removes tattoos of all sizes — from XXS to XL and larger. Cosmetic eyebrow tattoo removal and sleeve consultations also available.",

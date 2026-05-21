@@ -76,10 +76,10 @@ export default function MembershipPage() {
             className="inline-flex items-center gap-2 mb-8"
           >
             <motion.div
-              animate={{ scale: [1, 1.04, 1] }}
-              transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-              className="flex items-center gap-2 px-5 py-2 text-[#0E0E0E] text-[10px] tracking-[0.35em] uppercase font-normal"
-              style={{ backgroundColor: GOLD, fontFamily: "var(--font-inter), sans-serif" }}
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
+              className="flex items-center gap-2 px-6 py-2.5 text-white text-[10px] tracking-[0.35em] uppercase font-normal"
+              style={{ backgroundColor: TEAL, fontFamily: "var(--font-inter), sans-serif", boxShadow: `0 0 20px ${TEAL}60` }}
             >
               <Sparkles size={11} />
               Best Value · Most Popular
@@ -124,7 +124,7 @@ export default function MembershipPage() {
               className="text-[10px] tracking-[0.3em] uppercase font-light"
               style={{ fontFamily: "var(--font-inter), sans-serif", color: TEAL }}
             >
-              Join today and start saving immediately
+              Start Saving From Your Very First Visit
             </span>
           </motion.div>
 
@@ -133,12 +133,13 @@ export default function MembershipPage() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="inline-flex flex-col items-center mb-12"
+            className="inline-flex flex-col items-center mb-12 px-12 py-6"
+            style={{ boxShadow: `0 0 80px ${TEAL}25, 0 0 160px ${TEAL}10` }}
           >
             <div className="flex items-start gap-1 mb-1">
               <span
                 className="font-light mt-4"
-                style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "2.5rem", color: TEAL }}
+                style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "2.5rem", color: GOLD }}
               >
                 $
               </span>
@@ -147,7 +148,8 @@ export default function MembershipPage() {
                 style={{
                   fontFamily: "var(--font-cormorant), serif",
                   fontSize: "clamp(6rem, 16vw, 11rem)",
-                  color: TEAL,
+                  color: GOLD,
+                  textShadow: `0 0 40px ${GOLD}50`,
                 }}
               >
                 99
@@ -160,8 +162,8 @@ export default function MembershipPage() {
               </span>
             </div>
             <p
-              className="text-[10px] tracking-[0.45em] uppercase text-[#C9A96E]/70 font-light"
-              style={{ fontFamily: "var(--font-inter), sans-serif" }}
+              className="text-[10px] tracking-[0.45em] uppercase font-light"
+              style={{ fontFamily: "var(--font-inter), sans-serif", color: `${TEAL}90` }}
             >
               3-month minimum · cancel anytime after
             </p>
@@ -222,7 +224,8 @@ export default function MembershipPage() {
       </section>
 
       {/* ── PERKS ── */}
-      <section className="py-24 lg:py-36 bg-[#FAF7F2]">
+      <section className="py-24 lg:py-36 bg-[#0E0E0E] relative overflow-hidden">
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#C9A96E]/30 to-transparent" />
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.div
@@ -243,7 +246,7 @@ export default function MembershipPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-normal text-[#1C1C1C] leading-[1.1]"
+              className="font-normal text-white leading-[1.1]"
               style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "clamp(3rem, 5.5vw, 5rem)" }}
             >
               Every Month,{" "}
@@ -262,13 +265,14 @@ export default function MembershipPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: i * 0.1 }}
                   whileHover={{ y: -4 }}
-                  className="bg-white border border-[#E8D9C3]/60 p-8 group cursor-default"
+                  className="bg-[#1C1C1C] p-8 group cursor-default"
+                  style={{ border: `1px solid ${perk.color}25` }}
                 >
                   {/* Icon + value row */}
                   <div className="flex items-start justify-between mb-5">
                     <div
                       className="w-12 h-12 flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: `${perk.color}18` }}
+                      style={{ backgroundColor: `${perk.color}20` }}
                     >
                       <Icon size={20} style={{ color: perk.color }} strokeWidth={1.5} />
                     </div>
@@ -284,13 +288,13 @@ export default function MembershipPage() {
                     </span>
                   </div>
                   <h3
-                    className="font-normal text-[#1C1C1C] leading-tight mb-3"
+                    className="font-normal text-white leading-tight mb-3"
                     style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "1.5rem" }}
                   >
                     {perk.label}
                   </h3>
                   <p
-                    className="text-[#1C1C1C] text-[13px] leading-[1.8]"
+                    className="text-white/55 text-[13px] leading-[1.8]"
                     style={{ fontFamily: "var(--font-inter), sans-serif" }}
                   >
                     {perk.detail}
@@ -328,12 +332,13 @@ export default function MembershipPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="border border-white/8 overflow-hidden"
+            className="overflow-hidden"
+            style={{ border: `2px solid ${GOLD}50` }}
           >
             {/* Header row */}
-            <div className="hidden sm:grid grid-cols-[1fr_auto_auto_auto] gap-4 px-8 py-4 border-b border-white/8 bg-white/[0.03]">
+            <div className="hidden sm:grid grid-cols-[1fr_auto_auto_auto] gap-4 px-8 py-4 border-b bg-white/[0.03]" style={{ borderColor: `${GOLD}20` }}>
               {["Treatment", "Standard", "Member", "You Save"].map((h) => (
-                <span key={h} className="text-[9px] tracking-[0.25em] uppercase font-light" style={{ fontFamily: "var(--font-inter), sans-serif", color: `${GOLD}90` }}>
+                <span key={h} className="text-[9px] tracking-[0.25em] uppercase font-light" style={{ fontFamily: "var(--font-inter), sans-serif", color: h === "You Save" ? TEAL : `${GOLD}90` }}>
                   {h}
                 </span>
               ))}
@@ -345,7 +350,8 @@ export default function MembershipPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: ri * 0.08 }}
-                className="px-8 py-5 flex flex-col sm:grid sm:grid-cols-[1fr_auto_auto_auto] gap-2 sm:gap-4 sm:items-center border-b border-white/5 last:border-0 hover:bg-white/[0.03] transition-colors duration-200"
+                className="px-8 py-5 flex flex-col sm:grid sm:grid-cols-[1fr_auto_auto_auto] gap-2 sm:gap-4 sm:items-center border-b last:border-0 hover:bg-white/[0.03] transition-colors duration-200"
+                style={{ borderColor: `${GOLD}15` }}
               >
                 <p className="text-[14px] text-white/80 font-light" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
                   {row.treatment}
@@ -358,8 +364,8 @@ export default function MembershipPage() {
                 </p>
                 <div className="sm:w-32 sm:text-right">
                   <span
-                    className="inline-block text-[12px] font-normal px-3 py-1 text-[#0E0E0E]"
-                    style={{ fontFamily: "var(--font-inter), sans-serif", backgroundColor: GOLD }}
+                    className="inline-block text-[12px] font-bold px-3 py-1 text-white"
+                    style={{ fontFamily: "var(--font-inter), sans-serif", backgroundColor: TEAL }}
                   >
                     Save {row.saves}
                   </span>
@@ -419,6 +425,49 @@ export default function MembershipPage() {
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-3 text-white text-[12px] tracking-[0.35em] uppercase font-light px-16 py-5 transition-all duration-300 hover:shadow-2xl"
               style={{ fontFamily: "var(--font-inter), sans-serif", backgroundColor: TEAL, boxShadow: `0 8px 30px ${TEAL}40` }}
+            >
+              Become a Member Today
+              <ArrowRight size={14} />
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── FULL-WIDTH TURQUOISE BOTTOM CTA ── */}
+      <section className="py-20" style={{ backgroundColor: TEAL }}>
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p
+              className="text-white/80 text-[10px] tracking-[0.5em] uppercase mb-4 font-light"
+              style={{ fontFamily: "var(--font-inter), sans-serif" }}
+            >
+              Grace Light Membership
+            </p>
+            <h2
+              className="font-normal text-white mb-5 leading-[1.1]"
+              style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
+            >
+              Start Saving From Your Very First Visit
+            </h2>
+            <p
+              className="text-white/75 text-[15px] mb-10 max-w-xl mx-auto leading-[1.8]"
+              style={{ fontFamily: "var(--font-inter), sans-serif" }}
+            >
+              $99/month. 5 exclusive perks. Unlimited savings. Join today.
+            </p>
+            <motion.a
+              href={MANGOMINT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-3 text-[11px] tracking-[0.35em] uppercase font-light px-16 py-5 transition-all duration-300 hover:shadow-2xl"
+              style={{ fontFamily: "var(--font-inter), sans-serif", backgroundColor: "white", color: TEAL }}
             >
               Become a Member Today
               <ArrowRight size={14} />

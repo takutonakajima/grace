@@ -224,7 +224,7 @@ export default function PricingPage() {
             className="text-white font-normal leading-[1.05] mb-6"
             style={{
               fontFamily: "var(--font-cormorant), serif",
-              fontSize: "clamp(4.5rem, 9vw, 7.5rem)",
+              fontSize: "clamp(5rem, 9vw, 8.5rem)",
             }}
           >
             Our <em className="heading-highlight">Pricing</em>
@@ -438,7 +438,7 @@ export default function PricingPage() {
               className="font-normal text-[#1C1C1C] leading-[1.12] mb-9"
               style={{
                 fontFamily: "var(--font-cormorant), serif",
-                fontSize: "clamp(3rem, 5vw, 4.25rem)",
+                fontSize: "clamp(4.5rem, 5vw, 5.5rem)",
               }}
             >
               Full <em className="heading-highlight">Menu</em>
@@ -478,12 +478,10 @@ export default function PricingPage() {
               >
                 {/* Section Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-7 py-5 border-b border-[#F3EBE2] bg-[#FAF7F2]">
-                  <div className="flex items-start gap-5">
-                    <div className="w-0.5 self-stretch flex-shrink-0" style={{ backgroundColor: "#C9A96E" }} />
-                    <div>
+                  <div style={{ borderLeft: "3px solid #C9A96E", paddingLeft: "16px" }}>
                     <h3
-                      className="font-normal text-[#1C1C1C] leading-tight"
-                      style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "2.25rem" }}
+                      className="text-[#1C1C1C] leading-tight"
+                      style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "2rem", fontWeight: 700 }}
                     >
                       {section.title}
                     </h3>
@@ -495,7 +493,6 @@ export default function PricingPage() {
                         {section.subtitle}
                       </p>
                     )}
-                    </div>
                   </div>
                   <a
                     href={MANGOMINT_URL}
